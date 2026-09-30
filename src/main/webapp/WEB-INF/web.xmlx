@@ -1,0 +1,151 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+      version="5.0">
+
+
+<display-name>Banking Application</display-name>
+
+<!-- ================= LOGIN ================= -->
+<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.ducat.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+</servlet-mapping>
+
+<!-- ================= LOGOUT ================= -->
+<servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.ducat.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<!-- ================= SIGNUP ================= -->
+<servlet>
+    <servlet-name>SignupServlet</servlet-name>
+    <servlet-class>com.ducat.SignupServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SignupServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+</servlet-mapping>
+
+<!-- ================= DEPOSIT ================= -->
+<servlet>
+    <servlet-name>DepositServlet</servlet-name>
+    <servlet-class>com.ducat.DepositServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DepositServlet</servlet-name>
+    <url-pattern>/deposit</url-pattern>
+</servlet-mapping>
+
+<!-- ================= TRANSFER ================= -->
+<servlet>
+    <servlet-name>TransferServlet</servlet-name>
+    <servlet-class>com.ducat.TransferServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TransferServlet</servlet-name>
+    <url-pattern>/transfer</url-pattern>
+</servlet-mapping>
+
+<!-- ================= CHANGE PASSWORD ================= -->
+<servlet>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <servlet-class>com.ducat.ChangePasswordServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ChangePasswordServlet</servlet-name>
+    <url-pattern>/changePassword</url-pattern>
+</servlet-mapping>
+
+<!-- ================= CONTACT ================= -->
+<servlet>
+    <servlet-name>ContactusServlet</servlet-name>
+    <servlet-class>com.ducat.ContactusServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ContactusServlet</servlet-name>
+    <url-pattern>/contact</url-pattern>
+</servlet-mapping>
+
+<!-- ================= USER DASHBOARD ================= -->
+<servlet>
+    <servlet-name>UserDashboardServlet</servlet-name>
+    <servlet-class>com.ducat.UserDashboardServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UserDashboardServlet</servlet-name>
+    <url-pattern>/userDashboard</url-pattern>
+</servlet-mapping>
+
+<!-- ================= GET PROFILE ================= -->
+<servlet>
+    <servlet-name>GetProfileServlet</servlet-name>
+    <servlet-class>com.ducat.GetProfileServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetProfileServlet</servlet-name>
+    <url-pattern>/getProfile</url-pattern>
+</servlet-mapping>
+
+<!-- ================= ACCOUNT DETAILS ================= -->
+<servlet>
+    <servlet-name>GetAccountDetailsServlet</servlet-name>
+    <servlet-class>com.ducat.GetAccountDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetAccountDetailsServlet</servlet-name>
+    <url-pattern>/accountDetails</url-pattern>
+</servlet-mapping>
+
+<!-- ================= TRANSACTIONS ================= -->
+<servlet>
+    <servlet-name>GetTransactionsServlet</servlet-name>
+    <servlet-class>com.ducat.GetTransactionsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetTransactionsServlet</servlet-name>
+    <url-pattern>/GetTransactions</url-pattern>
+</servlet-mapping>
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+<servlet>
+    <servlet-name>AdminDashboardServlet</servlet-name>
+    <servlet-class>com.ducat.AdminDashboardServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AdminDashboardServlet</servlet-name>
+    <url-pattern>/adminDashboard</url-pattern>
+</servlet-mapping>
+
+<!-- ================= ADMIN ACTION ================= -->
+<servlet>
+    <servlet-name>AdminActionServlet</servlet-name>
+    <servlet-class>com.ducat.AdminActionServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AdminActionServlet</servlet-name>
+    <url-pattern>/adminAction</url-pattern>
+</servlet-mapping>
+
+<!-- ================= GET USERS ================= -->
+<servlet>
+    <servlet-name>GetUsersServlet</servlet-name>
+    <servlet-class>com.ducat.GetUsersServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetUsersServlet</servlet-name>
+    <url-pattern>/getUsers</url-pattern>
+</servlet-mapping>
+
+
+</web-app>
