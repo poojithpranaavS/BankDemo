@@ -294,19 +294,6 @@ The application can be tested using the following workflow:
 11. Log in through the administrator interface.
 12. Verify administrative operations.
 
-## Screenshots
-
-Screenshots can be added to this section as the project is demonstrated.
-
-Example:
-
-    <img width="1844" height="916" alt="image" src="https://github.com/user-attachments/assets/aa4af05e-c957-44c7-909d-cd9e86fd9217" />
-
-    <img width="795" height="822" alt="image" src="https://github.com/user-attachments/assets/f38e1daa-8d3c-4241-becf-bae23c1b10f3" />
-
-    <img width="957" height="896" alt="image" src="https://github.com/user-attachments/assets/18fbbdf5-e712-41d6-9595-96d6b7d918f5" />
-
-
 ## Repository Notes
 
 This project is maintained for academic demonstration and learning purposes.
