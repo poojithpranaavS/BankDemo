@@ -1,322 +1,312 @@
-# 🏦 BankServlet – Java Servlet Based Banking System
+# BankServlet – Online Banking Management System
+
+A Java Servlet-based online banking application that demonstrates user account management, authentication, deposits, fund transfers, transaction tracking, profile management, feedback, and administrative operations.
+
+> **Project attribution:** This repository is based on the publicly available BankDemo / BankServlet project by the original repository author. The underlying source structure and implementation are retained. This README documents the project and its local deployment setup.
+
+## Overview
+
+BankServlet is a web-based banking application built using Java Servlets, JDBC, MySQL, HTML, CSS, and JavaScript.
+
+The application provides two main roles:
+
+- **Customer/User**
+  - Register an account
+  - Log in and log out
+  - View account information
+  - Deposit money
+  - Transfer money
+  - View transaction history
+  - Update profile information
+  - Submit feedback
+
+- **Administrator**
+  - Log in through the admin interface
+  - View registered users
+  - Monitor account information
+  - Add or deduct funds
+  - Monitor banking transactions
+
+## Features
+
+### User Features
+
+- User registration
+- User authentication
+- Session-based login/logout
+- Account dashboard
+- Deposit functionality
+- Money transfer between accounts
+- Transaction history
+- Profile viewing and updating
+- Contact/feedback form
+
+### Admin Features
+
+- Administrator authentication
+- User management
+- Account balance management
+- Transaction monitoring
+- Administrative banking operations
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Backend | Java Servlets |
+| Database Access | JDBC |
+| Database | MySQL |
+| Web Server | Apache Tomcat 10.1 |
+| Client-side Requests | JavaScript Fetch API |
+| Project Format | Eclipse-style Java Web Application |
+
+## Application Architecture
+
+The application follows a traditional Java web application architecture:
+
+    Browser
+       |
+       | HTTP Requests / Fetch API
+       v
+    Java Servlets
+       |
+       | JDBC
+       v
+    MySQL Database
 
-![Java](https://img.shields.io/badge/Java-17+-orange)
-![Servlet](https://img.shields.io/badge/Servlet-Jakarta-blue)
-![Database](https://img.shields.io/badge/Database-MySQL-green)
-![Server](https://img.shields.io/badge/Server-Apache%20Tomcat-red)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+Servlets handle authentication, account operations, transactions, profile management, and administrative operations. JDBC provides the connection between the Java application and MySQL.
 
-A **Full Stack Online Banking Web Application** built using **Java Servlets, JDBC, MySQL, HTML, CSS, and JavaScript**.
-This project simulates a **mini banking system** where users can manage their accounts and administrators can manage user transactions.
+## Project Structure
 
-This project demonstrates:
+    BankDemo/
+    │
+    ├── src/
+    │   └── main/
+    │       ├── java/
+    │       │   └── com/
+    │       │       └── ducat/
+    │       │           ├── LoginServlet.java
+    │       │           ├── SignupServlet.java
+    │       │           ├── LogoutServlet.java
+    │       │           ├── DepositServlet.java
+    │       │           ├── TransferServlet.java
+    │       │           ├── GetProfileServlet.java
+    │       │           ├── ProfileUpdateServlet.java
+    │       │           ├── AdminActionServlet.java
+    │       │           ├── ContactusServlet.java
+    │       │           ├── DBConnection.java
+    │       │           └── MGSamples.java
+    │       │
+    │       └── webapp/
+    │           ├── index.html
+    │           ├── login.html
+    │           ├── signup.html
+    │           ├── dashboard.html
+    │           ├── deposit.html
+    │           ├── transfer.html
+    │           ├── transactions.html
+    │           ├── profile.html
+    │           ├── admin.html
+    │           ├── contact.html
+    │           └── sql.txt
+    │
+    ├── build/
+    │   └── classes/
+    │
+    ├── .classpath
+    ├── .project
+    ├── LICENSE
+    └── README.md
 
-* Java Servlet Architecture
-* Session Management
-* JDBC Database Integration
-* REST-style APIs with Fetch
-* Full Stack Web Development
+## Database
 
----
+The application uses a MySQL database named:
 
-# 📸 Application Screenshots
+    bankproj
 
-## 🏠 Home Page
+The database contains tables for:
 
-![Home](screenshots/home.png)
-
-## 🔐 Login Page
-
-![Login](screenshots/login.png)
-
-## 📊 User Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-## 👨‍💼 Admin Panel
-
-![Admin](screenshots/admin.png)
-
-*(Add screenshots in `/screenshots` folder to display them here.)*
-
----
-
-# ⚙️ Technologies Used
-
-### Backend
-
-* Java Servlets
-* JDBC
-* Apache Tomcat
-
-### Frontend
-
-* HTML5
-* CSS3
-* JavaScript (Fetch API)
-
-### Database
-
-* MySQL
-
-### Development Tools
-
-* Eclipse / IntelliJ
-* Git & GitHub
-
----
-
-# 🏗 System Architecture
-
-```
-                 ┌────────────────────┐
-                 │      Web Browser   │
-                 │  HTML / CSS / JS   │
-                 └─────────┬──────────┘
-                           │ HTTP Request
-                           ▼
-                 ┌────────────────────┐
-                 │   Apache Tomcat    │
-                 │   Java Servlets    │
-                 └─────────┬──────────┘
-                           │ JDBC
-                           ▼
-                 ┌────────────────────┐
-                 │      MySQL DB      │
-                 │      bankproj      │
-                 └────────────────────┘
-```
+- Users
+- Bank accounts
+- Transactions
+- Feedback
+- Administrative data
 
----
-
-# 📂 Project Structure
-
-```
-BankServlet
-│
-├── BankProjectDucat
-│   ├── src
-│   │   └── com.ducat
-│   │       ├── LoginServlet.java
-│   │       ├── SignupServlet.java
-│   │       ├── LogoutServlet.java
-│   │       ├── DepositServlet.java
-│   │       ├── TransferServlet.java
-│   │       ├── GetProfileServlet.java
-│   │       ├── ProfileUpdateServlet.java
-│   │       ├── AdminActionServlet.java
-│   │       ├── ContactusServlet.java
-│   │       └── DBConnection.java
-│   │
-│   ├── webapp
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   ├── signup.html
-│   │   ├── dashboard.html
-│   │   ├── deposit.html
-│   │   ├── transfer.html
-│   │   ├── transactions.html
-│   │   ├── profile.html
-│   │   ├── admin.html
-│   │   └── contact.html
-│
-├── database
-│   └── schema.sql
-│
-├── screenshots
-│   ├── home.png
-│   ├── login.png
-│   ├── dashboard.png
-│   └── admin.png
-│
-├── README.md
-└── .gitignore
-```
-
----
-
-# ✨ Features
-
-## 👤 User Features
-
-* Account Registration
-* Secure Login & Logout
-* Deposit Money
-* Transfer Money
-* View Transactions
-* Update Profile
-* Contact / Feedback Form
-
-## 🛠 Admin Features
-
-* Admin Login
-* View All Users
-* Add Money
-* Deduct Money
-* Monitor Transactions
-
----
-
-# 🗄 Database Configuration
-
-Database Details:
-
-```
-Database Name: bankproj
-Username: root
-Password: 223362
-```
-
-### DBConnection.java Example
-
-```java
-String url = "jdbc:mysql://localhost:3306/bankproj";
-String username = "root";
-String password = "223362";
-Connection con = DriverManager.getConnection(url, username, password);
-```
-
----
-
-# 🗃 Database Schema
-
-### User Table
-
-```sql
-CREATE TABLE usertable (
-    accountnumber VARCHAR(20) PRIMARY KEY,
-    fullname VARCHAR(100),
-    email VARCHAR(100),
-    phone VARCHAR(20),
-    username VARCHAR(50) UNIQUE,
-    password VARCHAR(100),
-    accountType VARCHAR(20)
-);
-```
+The SQL setup script is available at:
 
----
-
-### Account Table
-
-```sql
-CREATE TABLE account (
-    accountnumber VARCHAR(20) PRIMARY KEY,
-    balance DECIMAL(12,2) DEFAULT 0
-);
-```
+    src/main/webapp/sql.txt
 
----
+### Create the Database
 
-### Transactions Table
+Start MySQL and import the supplied SQL file:
 
-```sql
-CREATE TABLE transactions (
-    transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    accountnumber VARCHAR(20),
-    type VARCHAR(20),
-    amount DECIMAL(12,2),
-    description VARCHAR(255),
-    transactionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+    mysql -u root < src/main/webapp/sql.txt
 
----
+Verify the database:
 
-### Feedback Table
+    USE bankproj;
+    SHOW TABLES;
 
-```sql
-CREATE TABLE sbi_feedback (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fullname VARCHAR(100),
-    email VARCHAR(100),
-    phone VARCHAR(20),
-    subject VARCHAR(200),
-    message TEXT
-);
-```
+## Database Connection
 
----
+The application connects to MySQL through:
 
-# 🚀 Installation Guide
+    localhost:3306
 
-## 1️⃣ Clone Repository
+The database connection is implemented in:
 
-```bash
-git clone https://github.com/Kartik-2233/BankServlet.git
-```
+    src/main/java/com/ducat/DBConnection.java
 
----
+Configure the database credentials in the connection class or through the appropriate local configuration before running the application.
 
-## 2️⃣ Import Project
+**Do not commit database passwords, API keys, or other credentials to a public repository.**
 
-Import project into:
+## Mailgun Configuration
 
-* Eclipse
-* IntelliJ IDEA
-* NetBeans
+The project contains Mailgun-related functionality in:
 
-Configure **Apache Tomcat Server**.
+    src/main/java/com/ducat/MGSamples.java
 
----
+The hard-coded Mailgun API key has been removed from the source before publication.
 
-## 3️⃣ Setup Database
+If Mailgun functionality is required, configure the API key through an environment variable rather than placing the secret directly in source code.
 
-1. Install **MySQL**
-2. Create database
+Example:
 
-```sql
-CREATE DATABASE bankproj;
-```
+    API_KEY=<your-mailgun-api-key>
 
-3. Run schema.sql file.
+Never commit the actual API key to GitHub.
 
----
+## Running the Application
 
-## 4️⃣ Run Application
+### Requirements
 
-Start Tomcat and open:
+Install:
 
-```
-http://localhost:8082/BankServlet
-```
+- Java JDK
+- MySQL Server
+- Apache Tomcat 10.1
+- Git
 
----
+### 1. Clone the Repository
 
-# 🔐 Default Admin Login
+    git clone <your-repository-url>
+    cd BankDemo
 
-```
-Username: Admin
-Password: Admin123
-```
+### 2. Start MySQL
 
----
+Make sure MySQL Server is running on:
 
-# 📈 Future Improvements
+    localhost:3306
 
-* Password Encryption (BCrypt)
-* OTP Authentication
-* REST API Architecture
-* Spring Boot Migration
-* React Frontend
-* Payment Gateway Integration
+### 3. Import the Database
 
----
+    mysql -u root < src/main/webapp/sql.txt
 
-# 👨‍💻 Author
+### 4. Deploy to Tomcat
 
-**Kartikey Shrivastava**
+Copy the application files into the Tomcat deployment directory:
 
-Java Full Stack Developer
-Cybersecurity Enthusiast
+    apache-tomcat/
+    └── webapps/
+        └── BankServlet/
 
-GitHub
-https://github.com/Kartik-2233
+The compiled Java classes must be available under:
 
-LinkedIn
-https://linkedin.com/in/kartik2233
+    BankServlet/WEB-INF/classes/
 
----
+### 5. Start Tomcat
 
-# ⭐ Support
+On Windows, run:
 
-If you like this project, please give it a **⭐ on GitHub**!
+    startup.bat
+
+from:
+
+    apache-tomcat/bin/
+
+### 6. Open the Application
+
+Open the following URL in a browser:
+
+    http://localhost:8080/BankServlet/
+
+## Default Administrator
+
+The original project provides a default administrator account for demonstration purposes:
+
+    Username: Admin
+    Password: Admin123
+
+For any real deployment, change demonstration credentials and use proper password management.
+
+## Security Considerations
+
+This project is intended primarily as an academic/demo application.
+
+Before production use, additional security measures should be implemented, including:
+
+- Password hashing with a modern password-hashing algorithm
+- Secure secret management
+- HTTPS/TLS
+- CSRF protection
+- Strong input validation
+- Prepared statements for all database operations
+- Proper authorization checks
+- Secure session-cookie configuration
+- Rate limiting
+- Audit logging
+- Removal of demonstration credentials
+- Secure handling of email/API credentials
+
+## Educational Concepts Demonstrated
+
+This project demonstrates several Java Web Technology concepts:
+
+- HTML/CSS web interfaces
+- JavaScript client-side scripting
+- Java Servlets
+- Servlet annotations
+- HTTP request/response handling
+- Session management
+- JDBC database connectivity
+- MySQL integration
+- Fetch API / asynchronous requests
+- Role-based application functionality
+- Server-side business logic
+- Web application deployment using Apache Tomcat
+
+## Testing
+
+The application can be tested using the following workflow:
+
+1. Open the application.
+2. Create a user account.
+3. Log in.
+4. Open the dashboard.
+5. Check account information.
+6. Perform a deposit.
+7. Perform a transfer.
+8. Check transaction history.
+9. Update the profile.
+10. Log out.
+11. Log in through the administrator interface.
+12. Verify administrative operations.
+
+## Screenshots
+
+Screenshots can be added to this section as the project is demonstrated.
+
+Example:
+
+    <img width="1844" height="916" alt="image" src="https://github.com/user-attachments/assets/aa4af05e-c957-44c7-909d-cd9e86fd9217" />
+
+    <img width="795" height="822" alt="image" src="https://github.com/user-attachments/assets/f38e1daa-8d3c-4241-becf-bae23c1b10f3" />
+
+    <img width="957" height="896" alt="image" src="https://github.com/user-attachments/assets/18fbbdf5-e712-41d6-9595-96d6b7d918f5" />
+
+
+## Repository Notes
+
+This project is maintained for academic demonstration and learning purposes.
